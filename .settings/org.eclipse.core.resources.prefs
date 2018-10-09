@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//app/FbIndexManager.py=utf-8
+encoding//app/admin.py=utf-8
+encoding//app/age_score.py=utf-8
+encoding//app/apps.py=utf-8
+encoding//app/categorized_pages_score.py=utf-8
+encoding//app/functions.py=utf-8
+encoding//app/generic_pages_score.py=utf-8
+encoding//app/models.py=utf-8
+encoding//app/places_score.py=utf-8
+encoding//app/tests.py=utf-8
+encoding//app/views.py=utf-8
