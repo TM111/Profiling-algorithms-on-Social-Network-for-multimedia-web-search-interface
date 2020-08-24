@@ -3,7 +3,8 @@
 L’obiettivo della tesi consiste nella realizzazione di un sistema che permetta, sfruttando i dati dei Social Network degli utenti, di aiutare i motori di ricerca nel loro lavoro di espansione di query, ordinamento dei risultati, suggerimenti di ricerca e tutte quelle cose che hanno come scopo quello di andare in contro il più
 possibile agli interessi dell’utente. É stata creato un motore di ricerca su contenuti Facebook di utenti che, attraverso una profilazione, restituisce per prima i contenuti che possono essere più utili per l’utente stesso.
 
-##Requirements: java, python 2.7 and django must be installed
+
+Requirements: java, python 2.7 and django must be installed
 
 1) go to http://lucene.apache.org/solr/downloads.html and download apache Solr
 2) run apache Solr with command "bin/solr start"
