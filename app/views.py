@@ -10,7 +10,9 @@ from app.Index_new_user_data import *
 from django.http import HttpResponse
 import datetime
 
-solr_string='https://ss440210-eu-west-1-aws.searchstax.com/solr/demo/'
+s1='https://ss440210-eu-west-1-aws.searchstax.com/solr/demo/'
+s2='http://localhost:8983/solr/demo/'
+solr_string=s2
 solr = pysolr.Solr(solr_string)
 IndexManager=FbIndexManager(solr)
 
@@ -87,7 +89,7 @@ def results_list(request):
               "data":str(datetime.datetime.now())[:19]}]
         solr.add(doc)
         solr.commit()
-        
+    
     if logged:
         token=SocialToken.objects.filter(account__user=request.user, account__provider='facebook')[0]
         IndexManager.takeANDindexProfPic(token)
@@ -95,7 +97,11 @@ def results_list(request):
         tmp_json = graph.get_object(id='me', fields='albums{name,id,photos{images}}')
 
         user_id=str(tmp_json['id'])
-        tmp_json=tmp_json['albums']['data']
+        try:
+            tmp_json=tmp_json['albums']['data']
+        except:
+            return render(request, 'app/results_list.html',{'profpic': 0,'solr': solr_string})
+            
         for a in tmp_json:
             if a['name']=="Profile Pictures":
                 album=a

@@ -48,12 +48,12 @@
             {% if profpic != 0 %}
             <div class="nav-user"><div class="profpic nav-profpic" style="margin-left: 5px;"><a href="https://scontent.xx.fbcdn.net/v/t1.0-9/37775453_115551432704654_4658169182456643584_n.jpg?_nc_cat=110&amp;oh=dbfa36ff288ce5d351f51a55e6476005&amp;oe=5C23B013"><img src="{{profpic}}"></a></div><a href="http://www.google.it" style="margin-left: 5px;"></a></div>
        {% else %} 
-        <div class="login-facebook"> <a title="Facebook" class="socialaccount_provider facebook fb btn" href="/accounts/facebook/login/?process=login">
+        <div class="login-facebook"> <a title="Facebook" class="socialaccount_provider facebook fb btn" href="{% provider_login_url "facebook" method="js_sdk" %}">
           <i class="fa fa-facebook fa-fw"></i> Login with Facebook
          </a></div>
         {% endif %}
         </div>
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" id="query" style="width:65%">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" id="query" style="width:65%" autocomplete="off">
         
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle dropdown-filters" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:90%">

@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+from app import views
 
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/social/login/cancelled/$', views.results_list, name='results_list'),
     url(r'^accounts/', include('allauth.urls')),
+    
     url(r'', include('app.urls')),
+    
 ]

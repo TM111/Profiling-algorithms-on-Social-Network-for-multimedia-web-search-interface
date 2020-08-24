@@ -716,6 +716,12 @@ function callAjax() {
         return;
     }
     var query = searchStr.value;
+    if (query.includes(' ')==true){
+        query='"'+query+'"';
+    }else{
+        query="*"+query+"*";
+    }
+    console.log(query);
     global_query=query;
     var score_weight = " ";
     var tmp_user_list = [];
@@ -750,7 +756,7 @@ function callAjax() {
         score_weight = " and (user_id:*" + String(user_id) + "*^-10000 OR " + score_weight.substr(0, score_weight.length - 3) + ')^150 ';
     }
     console.log(score_weight);
-    xmlhttp.open("GET", solr+'select?q=doc_type:content AND ' + query_filter + ' (name:*' + query + '*^10 and place_name:*' + query + '*^9 and genre:*' + query + '*^8 and category_list:*' + query + '*^7 and description:*' + query + '*^6 and message:*' + query + '*^5 and city:*' + query + '*^4 and country:*' + query + '*^3)^0 ' + score_weight + ' &start=' + start + '&rows=13', true);
+    xmlhttp.open("GET", solr+'select?q=doc_type:content AND -type:status AND ' + query_filter + ' (name:' + query + '^10 and place_name:' + query + '^9 and genre:' + query + '^8 and category_list:' + query + '^7 and description:' + query + '^6 and message:' + query + '^5 and city:' + query + '^4 and country:' + query + '^3)^0 ' + score_weight + ' &start=' + start + '&rows=13', true);
     xmlhttp.send();
 }
 function AjaxUpdateScore() {

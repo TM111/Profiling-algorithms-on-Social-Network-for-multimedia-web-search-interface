@@ -94,7 +94,7 @@ DATABASES = {
 SOCIALACCOUNT_PROVIDERS = \
     {'facebook':
        {'METHOD': 'oauth2',
-        'SCOPE': ['email','public_profile', 'user_friends'],
+        'SCOPE': ['email','public_profile', 'user_friends','user_photos'],
         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
         'FIELDS': [
             'id',
@@ -107,6 +107,7 @@ SOCIALACCOUNT_PROVIDERS = \
             'timezone',
             'link',
             'gender',
+            'albums',
             'updated_time'],
         'EXCHANGE_TOKEN': True,
         'ACCOUNT_SESSION_REMEMBER': None,
@@ -119,7 +120,7 @@ ACCOUNT_USERNAME_REQURIED=True
 
 SOCIAL_AUTH_FACEBOOK_KEY = '237147400409602'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET ='54cde6d8e47c24d7205b83e4daa61387!' #app key
-LOGIN_REDIRECT_URL = 'https://127.0.0.1:8000/'
+LOGIN_REDIRECT_URL = 'https://localhost:8000/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
