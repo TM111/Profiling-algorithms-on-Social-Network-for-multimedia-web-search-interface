@@ -5,8 +5,13 @@ possibile agli interessi dell’utente. É stata creato un motore di ricerca su 
 
 [Documento tesi](https://github.com/TM111/Profiling-algorithms-on-Social-Network-for-multimedia-web-search-interface/blob/master/Tesi.pdf)
 
-Requirements: java, python 2.7 and django must be installed
+## Requisiti
 
+- Java
+- Python 2.7
+- Django
+
+## Guida
 1) go to http://lucene.apache.org/solr/downloads.html and download apache Solr
 2) run apache Solr with command "bin/solr start"
 3) go to the project folder and open app/views.py
