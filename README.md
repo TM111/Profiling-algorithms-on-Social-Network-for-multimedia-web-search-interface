@@ -12,8 +12,9 @@ possibile agli interessi dell’utente. É stata creato un motore di ricerca su 
 - Django
 
 ## Guida
-1) go to http://lucene.apache.org/solr/downloads.html and download apache Solr
-2) run apache Solr with command "bin/solr start"
-3) go to the project folder and open app/views.py
-4) at the beginning set solr_string with you solr url
-5) start app with the command "python manage.py runserver"
+
+1) Go to http://lucene.apache.org/solr/downloads.html and download apache Solr
+2) Run apache Solr with command "bin/solr start"
+3) Go to the project folder and open app/views.py
+4) At the beginning set solr_string with you solr url
+5) Start app with the command "python manage.py runserver"
